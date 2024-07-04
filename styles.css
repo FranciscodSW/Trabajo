@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 40px;
+    padding: 50px 0;
+}
+
+.slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 1080px;
+    height: 1080px; 
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.slider-box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+.slider-box li {
+    min-width: 100%;
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.slider-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+.texto h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.texto p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f9f6f6;
+    color: hwb(202 13% 9%);
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.text-container {
+    width: 80%;
+    max-width: 1280px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text-section {
+    background: #fafcfc;
+    padding: 20px;
+}
+   
+.texto.centrado {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ver-mas {
+    background-color:  #269ab1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mas:hover {
+    background-color:  #269ab1;
+}
+#formulario-unete {
+    background-color: #f0f0f0; /* Color de fondo diferente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#formulario-unete h2 {
+    color: #333; /* Color de texto diferente para el encabezado */
+}
+
+#formulario-unete label {
+    color: #555; /* Color de texto diferente para las etiquetas */
+}
+
+#formulario-unete input[type="text"],
+#formulario-unete input[type="email"],
+#formulario-unete input[type="file"],
+#formulario-unete input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc; /* Borde diferente para inputs y botón */
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no añada tamaño extra */
+}
+
+#formulario-unete input[type="file"] {
+    border: none; /* Sin borde para el input tipo file */
+    background-color: white; /* Color de fondo diferente para el input tipo file */
+}
+
+#formulario-unete input[type="submit"] {
+    background-color: #25adc8; /* Color de fondo diferente para el botón */
+    color: white;
+    cursor: pointer;
+}
+
+#formulario-unete input[type="submit"]:hover {
+    background-color: #1d7a89; /* Cambio de color al pasar el mouse */
+}
+
+/* Asegura que los elementos dentro del formulario se dispongan en columna */
+#formulario-unete form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Espaciado adicional para cada grupo de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.centered-image {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-image img {
+    max-width: 100%; /* Opcional: para ajustar la imagen al tamaño del contenedor */
+    height: auto;    /* Opcional: para mantener la proporción de la imagen */
+}
+
+/* Encabezado */
+.header {
+    background-color: #79bfcd; /* Turquesa */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+}
+
+.header .nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.header .nav button:hover {
+    text-decoration: underline;
+}
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media h2 {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Cambia este color al que prefieras */
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}

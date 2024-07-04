@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minerva</title>
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="header" id="mainHeader">
+        <div class="logo">
+            <img src="imagenes/Identidad Logo.png" alt="Vengala Company">
+        </div>
+        <nav class="nav">
+            <button onclick="location.href='index.html#slider1'">Inicio</button>
+            <button onclick="location.href='index.html#mision-vision'">Misión y Visión</button>
+            <button onclick="location.href='index.html#slider2'">Servicios</button>
+            <button onclick="location.href='index.html#slider3'">Proyectos Propios</button>
+            <button onclick="location.href='index.html#formulario-unete'">Únete</button>
+        </nav>
+    </header>
+    
+    <h2 class="titulo">Minerva</h2>
+    <div class="row">
+        <div class="column">
+            <img src="imagenes/Proyectos propios/Minerva/Crear nueva cuenta.jpeg" alt="photo1" onclick="openModal(this, 0)">
+            <img src="imagenes/Proyectos propios/Minerva/IMG_0902.JPG" alt="photo2" onclick="openModal(this, 1)">
+            <img src="imagenes/Proyectos propios/Minerva/IMG_0907.JPG" alt="photo3" onclick="openModal(this, 2)">
+            <img src="imagenes/Proyectos propios/Minerva/minervadorado.png" alt="photo4" onclick="openModal(this, 3)">
+        </div>
+        <div class="column">
+            <img src="imagenes/Proyectos propios/Minerva/Slider categorias principales.jpeg" alt="photo5" onclick="openModal(this, 4)">
+           
+        </div>
+        
+    </div>
+    
+    <div class="button-container">
+        <button onclick="location.href='http://example.com/proyecto-machihua'">Conocer más</button>
+    </div>
+    
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.column img');
+        const mainHeader = document.getElementById("mainHeader");
+        let originalHeaderStyle = {};
+
+        function openModal(imgElement, index) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+            currentIndex = index;
+
+            // Guardar el estilo original del header
+            originalHeaderStyle.display = mainHeader.style.display;
+
+            // Ocultar el header
+            mainHeader.style.display = "none";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+
+            // Restaurar el estilo original del header
+            mainHeader.style.display = originalHeaderStyle.display;
+        }
+
+        function changeSlide(step) {
+            currentIndex += step;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+            modalImg.src = images[currentIndex].src;
+            captionText.innerHTML = images[currentIndex].alt;
+        }
+    </script>
+
+</body>
+
+</html>
